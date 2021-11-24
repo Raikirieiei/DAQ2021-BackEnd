@@ -38,8 +38,6 @@ def covid_all_day():
         except mysql.connector.Error as error:
             print("Failed to insert into MySQL table {}".format(error))
 
-       
-
      
     if connection.is_connected():
         cursor.close()
