@@ -1,5 +1,6 @@
 import fetch_covid_all
 import fetch_covid_per_day
+import calculatedanger
 import requests
 import mysql.connector
 
@@ -12,9 +13,11 @@ try:
     cursor = connection.cursor()
     mySql_insert_query1 = """ DELETE FROM covid_per_day """
     mySql_insert_query2 = """ DELETE FROM covid_all """
+    mySql_insert_query3 = """ DELETE FROM covid_dangerous_province """
 
     cursor.execute(mySql_insert_query1)
     cursor.execute(mySql_insert_query2)
+    cursor.execute(mySql_insert_query3)
     connection.commit()
     print('Success')
 
@@ -29,3 +32,4 @@ finally:
 
 fetch_covid_all.covid_all_day()
 fetch_covid_per_day.covid_per_day()
+calculatedanger.covid_danger()
