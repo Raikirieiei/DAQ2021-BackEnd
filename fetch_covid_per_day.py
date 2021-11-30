@@ -15,7 +15,7 @@ def covid_per_day():
                                         database='b6210545963',
                                         user='b6210545963',
                                         password='thornthep.c@ku.th')
-    for i in range(len(parse_json)-1):
+    for i in range(len(parse_json)):
         txn_date = (parse_json[i]['txn_date'])
         province = (parse_json[i]['province'])
         new_case = (parse_json[i]['new_case'])
